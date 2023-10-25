@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
+""" _summary_
 
-import sys
-import os
-import logging
+Returns:
+    _type_: _description_
+"""
 import argparse
 import codecs
+import logging
+import os
 import re
+import sys
+
+import shmaplib
 
 # Import common scripts
 CWD = os.path.dirname(os.path.abspath(__file__))
@@ -13,8 +19,9 @@ sys.path.insert(0, CWD)
 sys.path.insert(0, os.path.normpath(os.path.join(CWD, '..', '..')))
 
 # Import common shortcut mapper library
-import shmaplib
+
 log = shmaplib.setuplog(os.path.join(CWD, 'output.log'))
+
 
 class RawHoudiniConfigParser(object):
     """This parser reads files from Houdini's key config and finds shortcuts and contexts in them
@@ -33,7 +40,8 @@ class RawHoudiniConfigParser(object):
 
     def __init__(self):
         super(RawHoudiniConfigParser, self).__init__()
-        self.idata = shmaplib.IntermediateShortcutData("SideFx Houdini", "NA", "Houdini")
+        self.idata = shmaplib.IntermediateShortcutData(
+            "SideFx Houdini", "NA", "Houdini")
         self._context_id_to_name_lookup = {}
 
         # HCONTEXT deskmgr "Desktop Manager" "These keys are used in the Desktop Manager dialog."
@@ -56,7 +64,6 @@ class RawHoudiniConfigParser(object):
             self._parse_file(filepath)
 
         return self.idata
-
 
     def _parse_file(self, filepath):
         # Read file contents
@@ -100,7 +107,6 @@ class RawHoudiniConfigParser(object):
                 self.idata.add_shortcut(context_name, label, keys_win, keys)
                 log.debug('...found shortcut "%s"', label)
 
-
     def _parse_context_name(self, line):
         match = self._re_context.search(line)
         if not match:
@@ -118,7 +124,8 @@ class RawHoudiniConfigParser(object):
             if id.count('.') > 2:
                 parts = id.split('.')
                 parent_id = '.'.join(parts[:3])
-                name = "{0} ({1})".format(self._context_id_to_name_lookup[parent_id], name)
+                name = "{0} ({1})".format(
+                    self._context_id_to_name_lookup[parent_id], name)
             else:
                 name = "Pane: " + name
 
@@ -130,13 +137,15 @@ class RawHoudiniConfigParser(object):
         return name
 
 
-
-
 def main():
-    parser = argparse.ArgumentParser(description="Converts Houdini's keyboard config files to an intermediate format that can be hand-edited.")
-    parser.add_argument('-v', '--verbose', action='store_true', required=False, help="Verbose output")
-    parser.add_argument('-o', '--output', required=True, help="Output filepath")
-    parser.add_argument('source', help="Source: path to directory of Houdini keyboard shortcuts (found under raw dir)")
+    parser = argparse.ArgumentParser(
+        description="Converts Houdini's keyboard config files to an intermediate format that can be hand-edited.")
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        required=False, help="Verbose output")
+    parser.add_argument('-o', '--output', required=True,
+                        help="Output filepath")
+    parser.add_argument(
+        'source', help="Source: path to directory of Houdini keyboard shortcuts (found under raw dir)")
 
     args = parser.parse_args()
     args.source = os.path.abspath(args.source)
@@ -154,8 +163,6 @@ def main():
     # Parse the keyconfig data
     docs_idata = RawHoudiniConfigParser().parse(args.source)
     docs_idata.serialize(args.output)
-
-
 
 
 if __name__ == '__main__':

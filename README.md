@@ -1,12 +1,12 @@
 ShortcutMapper
 ==================
 
-This is a keyboard shortcuts visualiser hosted here on Github:
+This is a keyboard shortcuts visualizer hosted here on Github:
 http://waldobronchart.github.io/ShortcutMapper/
 
 The goal of this project is to map out application keyboard shortcuts onto a virtual keyboard, making it easy to find and learn new shortcuts. The shortcut data is scraped from online documentation to reduce error and to keep the data easy to update with newer versions.
 
-![Imgur](http://waldobronchart.github.io/ShortcutMapper/content/images/overview.gif)
+![Imgurl](http://waldobronchart.github.io/ShortcutMapper/content/images/overview.gif)
 
 # Overview
 
@@ -53,14 +53,14 @@ sudo easy_install pip
 # Install virtualenv
 pip install virtualenv
 
-# Create a virtual environment in ShortcutMapper/_venv directory
+# Create a virtual environment in ShortcutMapper/.venv directory
 # For Windows, look here for instructions: 
 # http://virtualenv.readthedocs.io/en/latest/userguide/#usage
 cd ShortcutMapper/
-virtualenv -p /usr/bin/python3 _venv
+virtualenv -p /usr/bin/python3 .venv
 
 # Activate environment
-source _venv/bin/activate
+source .venv/bin/activate
 pip install BeautifulSoup4
 
 # Do an export
@@ -70,10 +70,10 @@ python exporters/adobe-photoshop/scripts/export.py -a
 Once your virtualenv in installed, all you need to do is activate it before you run the exporters
 
 ```
-source _venv/bin/activate
+source .venv/bin/activate
 
 # For windows, you will do this instead
-_venv\Source\activate.bat
+.venv\Source\activate.bat
 
 # Export all intermediate json files to content/generated/
 python utils/export_intermediate_data.py -a

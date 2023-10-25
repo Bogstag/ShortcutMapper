@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
+""" _summary_
 
-import sys
-import os
-import glob
-import logging
+Returns:
+    _type_: _description_
+"""
 import argparse
-import re
 import codecs
-from bs4 import BeautifulSoup
+import logging
+import os
+import re
+import sys
+
+import shmaplib
 
 # Import common scripts
 CWD = os.path.dirname(os.path.abspath(__file__))
@@ -15,7 +19,7 @@ sys.path.insert(0, CWD)
 sys.path.insert(0, os.path.normpath(os.path.join(CWD, '..', '..')))
 
 # Import common shortcut mapper library
-import shmaplib
+
 log = shmaplib.setuplog(os.path.join(CWD, 'output.log'))
 
 
@@ -68,13 +72,15 @@ class RawKBDXParser(object):
         return self.idata
 
 
-
-
 def main():
-    parser = argparse.ArgumentParser(description="Converts 3dsMax's raw files to an intermediate format.")
-    parser.add_argument('-v', '--verbose', action='store_true', required=False, help="Verbose output")
-    parser.add_argument('-o', '--output', required=True, help="Output filepath")
-    parser.add_argument('source', help="Source: a .txt file exported from max (/raw folder)")
+    parser = argparse.ArgumentParser(
+        description="Converts 3dsMax's raw files to an intermediate format.")
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        required=False, help="Verbose output")
+    parser.add_argument('-o', '--output', required=True,
+                        help="Output filepath")
+    parser.add_argument(
+        'source', help="Source: a .txt file exported from max (/raw folder)")
 
     args = parser.parse_args()
     args.source = os.path.abspath(args.source)
@@ -94,18 +100,5 @@ def main():
     docs_idata.serialize(args.output)
 
 
-
-
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-

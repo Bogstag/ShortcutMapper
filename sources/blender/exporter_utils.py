@@ -1,11 +1,18 @@
-import sys
+""" _summary_
+
+Returns:
+    _type_: _description_
+"""
 import os
+import sys
+
 import bpy
+
+import shmaplib
 
 # Import common shortcut mapper library
 CWD = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.normpath(os.path.join(CWD, '..', '..')))
-import shmaplib
 log = shmaplib.getlog()
 
 
@@ -57,18 +64,18 @@ KEYMAP_NAME_OVERRIDES = {
 }
 
 
-
 def get_keymap_item_mods(keymap_item):
     mods = []
     if keymap_item.shift:
         mods.append('SHIFT')
     if keymap_item.ctrl:
         mods.append('CTRL')
-    if keymap_item.oskey: #yes, oskey is command not "windows key"
+    if keymap_item.oskey:  # yes, oskey is command not "windows key"
         mods.append('COMMAND')
     if keymap_item.alt:
         mods.append('ALT')
     return mods
+
 
 def enum_value_to_name(enum, val):
     for enum_val in enum:
@@ -76,17 +83,12 @@ def enum_value_to_name(enum, val):
             return enum_val.name
     return "UNDEFINED"
 
+
 def enum_value_to_id(enum, val):
     for enum_val in enum:
         if enum_val.value == val:
             return enum_val.identifier
     return "UNDEFINED"
-
-
-
-
-
-
 
 
 def override_deselectall(shortcut_context, item):
@@ -108,6 +110,7 @@ def override_deselectall(shortcut_context, item):
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_setobjectmode(shortcut_context, item):
     name_overrides = {
         "mode-1,toggle-1": "Toggle Object/Edit Mode",
@@ -115,11 +118,13 @@ def override_setobjectmode(shortcut_context, item):
         "mode-8,toggle-1": "Toggle Weight Paint Mode",
         "mode-64,toggle-1": "Toggle Pose Mode"
     }
-    key = ''.join(["%s-%s," % (propKey, item.properties.get(propKey)) for propKey in item.properties.keys()]).strip(',')
+    key = ''.join(["%s-%s," % (propKey, item.properties.get(propKey))
+                  for propKey in item.properties.keys()]).strip(',')
     name = name_overrides[key]
 
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
+
 
 def override_callmenu(shortcut_context, item):
     name = item.properties.get("name").split('_MT_')[1]
@@ -129,6 +134,7 @@ def override_callmenu(shortcut_context, item):
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_layers(shortcut_context, item):
     mods = get_keymap_item_mods(item)
     nr = item.properties.get("nr")
@@ -136,47 +142,58 @@ def override_layers(shortcut_context, item):
         return shmaplib.Shortcut("Toggle All Layers", item.type, mods, item.any)
 
     # Add missing ALT shortcuts
-    shortcut = shmaplib.Shortcut("Switch To Layer %s" % (nr+10), item.type, ['ALT'])
+    shortcut = shmaplib.Shortcut(
+        "Switch To Layer %s" % (nr+10), item.type, ['ALT'])
     shortcut_context.add_shortcut(shortcut)
 
     # Add missing SHIFT shortcuts
-    shortcut = shmaplib.Shortcut("Toggle Layer %s" % (nr), item.type, ['SHIFT'])
+    shortcut = shmaplib.Shortcut("Toggle Layer %s" %
+                                 (nr), item.type, ['SHIFT'])
     shortcut_context.add_shortcut(shortcut)
-    shortcut = shmaplib.Shortcut("Toggle Layer %s" % (nr+10), item.type, ['SHIFT', 'ALT'])
+    shortcut = shmaplib.Shortcut("Toggle Layer %s" %
+                                 (nr+10), item.type, ['SHIFT', 'ALT'])
     shortcut_context.add_shortcut(shortcut)
 
     # Default shortcut
     return shmaplib.Shortcut("Switch To Layer %s" % (nr), item.type, [])
+
 
 def override_subdivisionset(shortcut_context, item):
     name = "Set Subdivision Level To %s" % item.properties.get("level")
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_radialcontrol(shortcut_context, item):
-    data_path_primary = item.properties.get("data_path_primary").rsplit('.', 1)[1].capitalize()
+    data_path_primary = item.properties.get(
+        "data_path_primary").rsplit('.', 1)[1].capitalize()
     name = "Brush %s" % data_path_primary
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
+
 
 def override_setbrushnumber(shortcut_context, item):
     name = "Brush %s" % item.properties.get("index")
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_context_toggle(shortcut_context, item):
-    context = item.properties.get("data_path").rsplit('.', 1)[1].replace('_', ' ').title()
+    context = item.properties.get("data_path").rsplit('.', 1)[
+        1].replace('_', ' ').title()
     name = "Toggle %s" % context
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_context_toggle_values(shortcut_context, item):
-    context = item.properties.get("data_path").rsplit('.', 1)[1].replace('_', ' ').title()
+    context = item.properties.get("data_path").rsplit('.', 1)[
+        1].replace('_', ' ').title()
     value1 = item.properties.get("value_1")
     value2 = item.properties.get("value_2")
     if len(value1) and len(value2):
         if value1 == "DISABLED":
-            name =  "Toggle %s" % context
+            name = "Toggle %s" % context
         else:
             name = "%s %s/%s" % (context, value1, value2)
     else:
@@ -185,44 +202,54 @@ def override_context_toggle_values(shortcut_context, item):
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_context_set(shortcut_context, item):
-    context = item.properties.get("data_path").rsplit('.', 1)[1].replace('_', ' ').title()
-    name =  "Set %s %s" % (context, item.properties.get("value"))
+    context = item.properties.get("data_path").rsplit('.', 1)[
+        1].replace('_', ' ').title()
+    name = "Set %s %s" % (context, item.properties.get("value"))
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
+
 
 def override_context_set_enum(shortcut_context, item):
     context = item.properties.get("data_path")
     if context.startswith("area"):
         name = item.properties.get("value").replace('_', ' ').title()
     elif context.startswith("space_data.pivot"):
-        name = "Set Pivot: %s" % item.properties.get("value").replace('_', ' ').title()
+        name = "Set Pivot: %s" % item.properties.get(
+            "value").replace('_', ' ').title()
 
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_context_enum_menu(shortcut_context, item):
-    context = item.properties.get("data_path").rsplit('.', 1)[1].replace('_', ' ').title()
+    context = item.properties.get("data_path").rsplit('.', 1)[
+        1].replace('_', ' ').title()
     name = "%s Menu" % context
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_context_type_cycle(shortcut_context, item):
-    context = item.properties.get("data_path").rsplit('.', 1)[1].replace('_', ' ').title()
+    context = item.properties.get("data_path").rsplit('.', 1)[
+        1].replace('_', ' ').title()
     name = "Cycle %s" % context
     mods = get_keymap_item_mods(item)
     return shmaplib.Shortcut(name, item.type, mods, item.any)
 
+
 def override_brush_select(shortcut_context, item):
     paint_mode_val = item.properties.get("paint_mode")
     paint_mode_enum = bpy.types.PAINT_OT_brush_select.bl_rna.properties['paint_mode'].enum_items
-    paint_mode_identifier = enum_value_to_id(paint_mode_enum, paint_mode_val).lower()
+    paint_mode_identifier = enum_value_to_id(
+        paint_mode_enum, paint_mode_val).lower()
     tool_name = paint_mode_identifier + "_tool"
     brush_val = item.properties.get(tool_name)
     brush_enum = bpy.types.PAINT_OT_brush_select.bl_rna.properties[tool_name].enum_items
     brush_name = enum_value_to_name(brush_enum, brush_val)
     if item.properties.get("toggle"):
-        name =  "Toggle %s Brush" % brush_name
+        name = "Toggle %s Brush" % brush_name
     else:
         name = "%s Brush" % brush_name
 
@@ -250,11 +277,6 @@ KEYMAPITEM_CUSTOM_RULES = {
 }
 
 
-
-
-
-
-
 def keymapitem_to_shortcut(shortcut_context, keymap_item):
     name = keymap_item.name
     if len(name) == 0:
@@ -262,7 +284,7 @@ def keymapitem_to_shortcut(shortcut_context, keymap_item):
     if len(name) == 0:
         name = keymap_item.propvalue
 
-    #log.debug('parsing keymap item: %s', name)
+    # log.debug('parsing keymap item: %s', name)
 
     # Apply overrides if needed
     if name in KEYMAPITEM_CUSTOM_RULES.keys():
@@ -273,19 +295,3 @@ def keymapitem_to_shortcut(shortcut_context, keymap_item):
     # Default behaviour
     mods = get_keymap_item_mods(keymap_item)
     return shmaplib.Shortcut(name, keymap_item.type, mods, keymap_item.any)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

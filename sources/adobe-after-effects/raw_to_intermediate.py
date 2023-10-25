@@ -1,9 +1,12 @@
-import sys
-import os
-import glob
-import logging
+""" _summary_
+"""
 import argparse
-import re
+import logging
+import os
+import sys
+
+import shmaplib
+from shmaplib.adobe import AdobeDocsParser
 
 # Import common scripts
 CWD = os.path.dirname(os.path.abspath(__file__))
@@ -11,16 +14,21 @@ sys.path.insert(0, CWD)
 sys.path.insert(0, os.path.normpath(os.path.join(CWD, '..', '..')))
 
 # Import common shortcut mapper library
-import shmaplib
-from shmaplib.adobe import AdobeDocsParser
+
 log = shmaplib.setuplog(os.path.join(CWD, 'output.log'))
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Converts Illustrator's raw files to an intermediate format.")
-    parser.add_argument('-v', '--verbose', action='store_true', required=False, help="Verbose output")
-    parser.add_argument('-o', '--output', required=True, help="Output filepath")
-    parser.add_argument('source', help="Source: HTML file containing shortcuts saved directly from adobe's online documentation (/raw folder)")
+    """main _summary_
+    """
+    parser = argparse.ArgumentParser(
+        description="Converts Illustrator's raw files to an intermediate format.")
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        required=False, help="Verbose output")
+    parser.add_argument('-o', '--output', required=True,
+                        help="Output filepath")
+    parser.add_argument(
+        'source', help="Source: HTML file containing shortcuts saved directly from adobe's online documentation (/raw folder)")
 
     args = parser.parse_args()
     args.source = os.path.abspath(args.source)
@@ -42,14 +50,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-

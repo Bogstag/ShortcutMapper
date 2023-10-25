@@ -1,24 +1,39 @@
-import sys
-import os
+""" _summary_
+
+Returns:
+    _type_: _description_
+"""
 import logging
+import os
+import sys
+
+import bpy
+import exporter_utils as util
+
+import shmaplib
 
 CWD = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, CWD)
 sys.path.insert(0, os.path.normpath(os.path.join(CWD, '..', '..')))
 
 # Import common shortcut mapper library
-import shmaplib
+
 log = shmaplib.setuplog(os.path.join(CWD, 'output.log'))
 
 # Import blender related stuff
-import bpy
-import exporter_utils as util
 
 
 def parse_main_keyconfig(app):
-    """The beef, this gets all keyconfigs from blender and converts blender data into
-    our specific format."""
+    """parse_main_keyconfig 
+        The beef, this gets all keyconfigs from blender and converts blender data into
+        our specific format.
 
+    Args:
+        app (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     keyconfig = bpy.context.window_manager.keyconfigs[0]
 
     # Find all keymaps
@@ -54,7 +69,7 @@ def parse_main_keyconfig(app):
 def export():
     # Verbosity setting on log
     log.setLevel(logging.INFO)
-    #log.setLevel(logging.DEBUG)
+    # log.setLevel(logging.DEBUG)
 
     # Get Blender platform and version
     import platform

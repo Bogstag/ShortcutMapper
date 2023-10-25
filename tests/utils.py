@@ -1,11 +1,19 @@
+""" _summary_
+
+Returns:
+    _type_: _description_
+"""
 import sys
 import unittest
 
 
 class BaseTestCase(unittest.TestCase):
-    """Baseclass for all the tests that Flask uses.  Use these methods
-    for testing instead of the camelcased ones in the baseclass for
-    consistency.
+    """BaseTestCase Baseclass for all the tests that Flask uses.  
+    Use these methods for testing instead of the camelcased ones in 
+    the baseclass for consistency.
+
+    Args:
+        unittest (_type_): _description_
     """
 
     def setup(self):

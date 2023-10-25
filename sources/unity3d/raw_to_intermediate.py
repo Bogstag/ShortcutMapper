@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
+""" _summary_
 
-import sys
-import os
-import logging
+Returns:
+    _type_: _description_
+"""
 import argparse
-import re
 import codecs
+import logging
+import os
+import sys
+
 from bs4 import BeautifulSoup
+
+import shmaplib
 
 # Import common scripts
 CWD = os.path.dirname(os.path.abspath(__file__))
@@ -14,7 +20,6 @@ sys.path.insert(0, CWD)
 sys.path.insert(0, os.path.normpath(os.path.join(CWD, '..', '..')))
 
 # Import common shortcut mapper library
-import shmaplib
 log = shmaplib.setuplog(os.path.join(CWD, 'output.log'))
 
 
@@ -73,17 +78,22 @@ class RawDocsParser(object):
                     keys_win = mods[0] + "+" + keys
                     keys_mac = mods[1] + "+" + keys
 
-                self.idata.add_shortcut(context_name, label, keys_win, keys_mac)
+                self.idata.add_shortcut(
+                    context_name, label, keys_win, keys_mac)
                 log.debug('...found shortcut "%s"', label)
 
         return self.idata
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Converts Unity's raw files to an intermediate format.")
-    parser.add_argument('-v', '--verbose', action='store_true', required=False, help="Verbose output")
-    parser.add_argument('-o', '--output', required=True, help="Output filepath")
-    parser.add_argument('source', help="Source: HTML file containing shortcuts saved directly from adobe's online documentation (/raw folder)")
+    parser = argparse.ArgumentParser(
+        description="Converts Unity's raw files to an intermediate format.")
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        required=False, help="Verbose output")
+    parser.add_argument('-o', '--output', required=True,
+                        help="Output filepath")
+    parser.add_argument(
+        'source', help="Source: HTML file containing shortcuts saved directly from adobe's online documentation (/raw folder)")
 
     args = parser.parse_args()
     args.source = os.path.abspath(args.source)
@@ -105,14 +115,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
-

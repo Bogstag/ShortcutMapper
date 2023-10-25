@@ -1,15 +1,21 @@
 #!/usr/bin/python
 # coding:utf-8
+""" _summary_
 
-import re
-import copy
-import json
-import sys
-import os
-import glob
-import logging
+Returns:
+    _type_: _description_
+"""
 import argparse
 import codecs
+import copy
+import glob
+import logging
+import os
+import re
+import sys
+
+import shmaplib
+from shmaplib.intermediate import IntermediateShortcutData
 
 # Import common scripts
 CWD = os.path.dirname(os.path.abspath(__file__))
@@ -17,8 +23,7 @@ sys.path.insert(0, CWD)
 sys.path.insert(0, os.path.normpath(os.path.join(CWD, '..', '..')))
 
 # Import common shortcut mapper library
-import shmaplib
-from shmaplib.intermediate import IntermediateShortcutData
+
 log = shmaplib.setuplog(os.path.join(CWD, 'output.log'))
 
 
@@ -57,10 +62,13 @@ class StEmmetParser(IntermediateShortcutData):
         """Extract the mac keys and the windows keys.
         """
         origin = origin.split(' / ')
-        if len(origin) == 1:    # If there is only one shortcuts, we should duplicate it for both OS.
+        # If there is only one shortcuts, we should duplicate it for both OS.
+        if len(origin) == 1:
             origin.append(copy.deepcopy(origin[0]))
-        keys_mac = [self._clean_text(p_shortcut.findall(i)) for i in origin[0].split('or')]
-        keys_win = [self._clean_text(p_shortcut.findall(i)) for i in origin[1].split('or')]
+        keys_mac = [self._clean_text(p_shortcut.findall(i))
+                    for i in origin[0].split('or')]
+        keys_win = [self._clean_text(p_shortcut.findall(i))
+                    for i in origin[1].split('or')]
         return ' or '.join(keys_win), ' or '.join(keys_mac)
 
     def parse(self, source_filepath):
@@ -72,7 +80,8 @@ class StEmmetParser(IntermediateShortcutData):
         md_doc = _get_file_contents(source_filepath)
 
         # Iterate sections (headers are contexts, tables contain the shortcuts)
-        context_name = source_filepath.replace('\\', '/').split('/')[-1].split('.')[0]
+        context_name = source_filepath.replace(
+            '\\', '/').split('/')[-1].split('.')[0]
         log.debug('Scanning context: "%s"', context_name)
         for line in md_doc:
             if line.startswith("## Extensions support ##"):
@@ -80,24 +89,33 @@ class StEmmetParser(IntermediateShortcutData):
             if '<kbd>' in line:
                 if p_name.findall(line):
                     shortcut_name = p_name.findall(line)[0].decode('utf-8')
-                    keys_win, keys_mac = self._convert_shortcut(line[line.find('<kbd>'):])
+                    keys_win, keys_mac = self._convert_shortcut(
+                        line[line.find('<kbd>'):])
                 elif p_op.findall(line):
-                    shortcut_name = p_op.findall(line)[0].strip().decode('utf-8')
-                    keys_win, keys_mac = self._convert_shortcut(line[line.find('<kbd>'):])
+                    shortcut_name = p_op.findall(
+                        line)[0].strip().decode('utf-8')
+                    keys_win, keys_mac = self._convert_shortcut(
+                        line[line.find('<kbd>'):])
                 elif line.startswith("*"):
-                    shortcut_name = p_fake.findall(line)[0].replace('–', '').replace('—', '').strip(' ').decode('utf-8')
-                    keys_win, keys_mac = self._convert_shortcut(line[line.find('<kbd>'):])
+                    shortcut_name = p_fake.findall(line)[0].replace(
+                        '–', '').replace('—', '').strip(' ').decode('utf-8')
+                    keys_win, keys_mac = self._convert_shortcut(
+                        line[line.find('<kbd>'):])
 
-                self.add_shortcut(context_name, shortcut_name, keys_win, keys_mac)
+                self.add_shortcut(context_name, shortcut_name,
+                                  keys_win, keys_mac)
                 log.debug('...found shortcut "%s"', shortcut_name)
 
         return
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Converts Sublime Text's raw files to an intermediate format.")
-    parser.add_argument('-v', '--verbose', action='store_true', required=False, help="Verbose output")
-    parser.add_argument('-o', '--output', required=True, help="Output filepath")
+    parser = argparse.ArgumentParser(
+        description="Converts Sublime Text's raw files to an intermediate format.")
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        required=False, help="Verbose output")
+    parser.add_argument('-o', '--output', required=True,
+                        help="Output filepath")
 
     args = parser.parse_args()
     args.output = os.path.abspath(args.output)
@@ -115,8 +133,6 @@ def main():
         docs_idata.parse(filepath)
         log.info('    \n')
     docs_idata.serialize(args.output)
-
-
 
 
 if __name__ == '__main__':

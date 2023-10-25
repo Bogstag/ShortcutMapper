@@ -1,5 +1,5 @@
-import sys
 import logging
+import sys
 
 
 class LogData(object):
@@ -20,8 +20,7 @@ def setuplog(output_file=None):
 
     log = LogData.log_instance
     if LogData.log_instance is None:
-        log = logging.Logger()
-    log.name = 'main'
+        log = logging.Logger(name = 'main')
 
     # Format
     formatter = logging.Formatter('%(asctime)s %(levelname)8s %(module)10s.py@%(lineno)-3d   %(message)s')
