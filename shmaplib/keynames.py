@@ -302,7 +302,7 @@ def _populate_valid_keynames():
     # Valid keynames that aren't in the VALID_NAME_LOOKUP values
     valid_keynames.extend([
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
-        'N', 'O', 'P', 'Q', 'R', 'S', 'T', '', 'V', 'W', 'X', 'Y', 'Z',
+        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
         'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11',
         'F12', 'F13', 'F14', 'F15', 'F16', 'F17', 'F18', 'F19',
         'TAB', 'END', 'NUMLOCK', 'EJECT', 'FN_KEY', 'CLEAR',
