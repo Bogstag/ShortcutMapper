@@ -17,10 +17,12 @@ class BaseTestCase(unittest.TestCase):
     """
 
     def setup(self):
-        pass
+        """setup _summary_
+        """
 
     def teardown(self):
-        pass
+        """teardown _summary_
+        """
 
     def setUp(self):
         self.setup()
@@ -30,9 +32,27 @@ class BaseTestCase(unittest.TestCase):
         self.teardown()
 
     def assert_equal(self, x, y):
+        """assert_equal _summary_
+
+        Args:
+            x (_type_): _description_
+            y (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         return self.assertEqual(x, y)
 
     def assert_raises(self, exc_type, callable=None, *args, **kwargs):
+        """assert_raises _summary_
+
+        Args:
+            exc_type (_type_): _description_
+            callable (_type_, optional): _description_. Defaults to None.
+
+        Returns:
+            _type_: _description_
+        """
         catcher = _ExceptionCatcher(self, exc_type)
         if callable is None:
             return catcher
@@ -40,22 +60,58 @@ class BaseTestCase(unittest.TestCase):
             callable(*args, **kwargs)
 
     def assert_true(self, x, msg=None):
+        """assert_true _summary_
+
+        Args:
+            x (_type_): _description_
+            msg (_type_, optional): _description_. Defaults to None.
+        """
         self.assertTrue(x, msg)
 
     def assert_false(self, x, msg=None):
+        """assert_false _summary_
+
+        Args:
+            x (_type_): _description_
+            msg (_type_, optional): _description_. Defaults to None.
+        """
         self.assertFalse(x, msg)
 
     def assert_in(self, x, y):
+        """assert_in _summary_
+
+        Args:
+            x (_type_): _description_
+            y (_type_): _description_
+        """
         self.assertIn(x, y)
 
     def assert_not_in(self, x, y):
+        """assert_not_in _summary_
+
+        Args:
+            x (_type_): _description_
+            y (_type_): _description_
+        """
         self.assertNotIn(x, y)
 
     if sys.version_info[:2] == (2, 6):
         def assertIn(self, x, y):
+            """assertIn _summary_
+
+            Args:
+                x (_type_): _description_
+                y (_type_): _description_
+            """
             assert x in y, "%r unexpectedly not in %r" % (x, y)
 
         def assertNotIn(self, x, y):
+            """assertNotIn _summary_
+
+            Args:
+                x (_type_): _description_
+                y (_type_): _description_
+            """
             assert x not in y, "%r unexpectedly in %r" % (x, y)
 
 
@@ -71,8 +127,7 @@ class _ExceptionCatcher(object):
     def __exit__(self, exc_type, exc_value, tb):
         exception_name = self.exc_type.__name__
         if exc_type is None:
-            self.test_case.fail('Expected exception of type %r' %
-                                exception_name)
+            self.test_case.fail(f'Expected exception of type {exception_name}')
         elif not issubclass(exc_type, self.exc_type):
-            reraise(exc_type, exc_value, tb)
+            raise (exc_type, exc_value, tb)
         return True

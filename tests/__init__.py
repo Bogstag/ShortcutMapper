@@ -1,1 +1,3 @@
-from .keyboards import TestKeyboardLayout
+""" Tests
+"""
+from .keyboards_test import TestKeyboardLayout

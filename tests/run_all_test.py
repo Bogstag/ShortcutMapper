@@ -1,6 +1,8 @@
+""" Run all tests
+"""
 import unittest
 
-from .keyboards import TestKeyboardLayout
+from tests.keyboards_test import TestKeyboardLayout
 
 
 def main():
@@ -16,7 +18,7 @@ def main():
         unittest.TextTestRunner(verbosity=2).run(suite)
 
     except Exception as e:
-        print('Error: %s' % e)
+        print(f'Error: {e}')
 
 
 if __name__ == '__main__':
