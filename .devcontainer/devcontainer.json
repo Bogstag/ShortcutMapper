@@ -12,11 +12,22 @@
 		"ghcr.io/devcontainers-contrib/features/http-server:1": {},
 		"ghcr.io/devcontainers-contrib/features/jshint:2": {},
 		"ghcr.io/devcontainers-contrib/features/npm-package:1": {}
-	}
+	},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	"forwardPorts": [
 		8080
-	]
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"magicstack.MagicPython",
+				"ms-python.vscode-pylance",
+				"ms-python.pylint",
+				"ms-python.python",
+				"donjayamanne.python-environment-manager"
+			]
+		}
+	}
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
 	// Configure tool-specific properties.
