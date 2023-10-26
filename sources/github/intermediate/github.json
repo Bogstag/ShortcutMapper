@@ -1,0 +1,339 @@
+{
+    "name": "GitHub",
+    "version": "2023",
+    "default_context": "Global Context",
+    "os": [
+        "windows"
+    ],
+    "contexts": {
+        "Repositories": {
+            "Go to theCodetab": [
+                "\n<kbd>G</kbd>\n<kbd>C</kbd>\n"
+            ],
+            "Go to theIssuestab. For more information, see \"About\n                                                            issues.\"": [
+                "\n<kbd>G</kbd>\n<kbd>I</kbd>\n"
+            ],
+            "Go to thePull requeststab. For more information, see \"About\n                                                            pull requests.\"": [
+                "\n<kbd>G</kbd>\n<kbd>P</kbd>\n"
+            ],
+            "Go to theActionstab. For more information, see \"Learn GitHub\n                                                            Actions.\"": [
+                "\n<kbd>G</kbd>\n<kbd>A</kbd>\n"
+            ],
+            "Go to theProjectstab. For more information, see \"About\n                                                            projects (classic).\"": [
+                "\n<kbd>G</kbd>\n<kbd>B</kbd>\n"
+            ],
+            "Go to theWikitab. For more information, see \"About\n                                                            wikis.\"": [
+                "\n<kbd>G</kbd>\n<kbd>W</kbd>\n"
+            ],
+            "Go to theDiscussionstab. For more information, see \"About\n                                                            discussions.\"": [
+                "\n<kbd>G</kbd>\n<kbd>G</kbd>\n"
+            ]
+        },
+        "Source code editing": {
+            "Opens a repository or pull request in the github.dev editor, in\n                                                        the same browser tab. You must be signed in to use the editor.\n                                                        For more information, see \"The\n                                                            github.dev web-based editor.\"": [
+                "\n<kbd>.</kbd>\n"
+            ],
+            "Opens a repository or pull request in the github.dev editor, in\n                                                        a new browser tab. You must be signed in to use the editor. For\n                                                        more information, see \"The\n                                                            github.dev web-based editor.\"": [
+                "\n<kbd>&gt;</kbd>\n"
+            ],
+            "Inserts Markdown formatting for bolding text": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>B</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>B</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for italicizing text": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>I</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>I</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for creating a link": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>K</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>K</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for an ordered list": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>7</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>7</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for an unordered list": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>8</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>8</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for a quote": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>.</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>.</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Open source code file in theEdit filetab": [
+                "\n<kbd>E</kbd>\n"
+            ],
+            "Start searching in file editor": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>F</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>F</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Find next": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>G</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>G</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Find previous": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>G</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>G</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Replace": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Option</kbd>\n                                                        +<kbd>F</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>F</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Replace all": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>Option</kbd>\n                                                        +<kbd>F</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>R</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Jump to line": [
+                "\n<kbd>Alt</kbd>\n                                                        +<kbd>G</kbd>\n"
+            ],
+            "Undo": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Z</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Z</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Redo": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Y</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Y</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Toggles between theEdit fileandPreview changestabs": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>P</kbd>\n"
+            ],
+            "Write a commit message": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>S</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>S</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ]
+        },
+        "Source code browsing": {
+            "Activates the file finder": [
+                "\n<kbd>T</kbd>\n"
+            ],
+            "Jump to a line in your code": [
+                "\n<kbd>L</kbd>\n"
+            ],
+            "Switch to a new branch or tag": [
+                "\n<kbd>W</kbd>\n"
+            ],
+            "Expand a URL to its canonical form. For more information, see\n                                                        \"Getting\n                                                            permanent links to files.\"": [
+                "\n<kbd>Y</kbd>\n"
+            ],
+            "Show or hide comments on diffs. For more information, see \"Commenting\n                                                            on a pull request.\"": [
+                "\n<kbd>I</kbd>\n"
+            ],
+            "Show or hide annotations on diffs": [
+                "\n<kbd>A</kbd>\n"
+            ],
+            "Open blame view. For more information, see \"Viewing\n                                                            a file.\"": [
+                "\n<kbd>B</kbd>\n"
+            ]
+        },
+        "Navigating within code files": {
+            "Highlights the line that is currently selected by the cursor\n                                                        within the code file": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>J</kbd>\n"
+            ],
+            "If a line of code is currently selected, this shortcut opens the\n                                                        line menu for that line, appearing underto the left of the line": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>Option</kbd>\n                                                        +<kbd>C</kbd>\n                                                        (Mac) or <br/>\n<kbd>Shift</kbd>\n                                                        +<kbd>Alt</kbd>\n                                                        +<kbd>C</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Highlights the code symbol currently selected by the cursor and\n                                                        all other occurrences of the symbol in the code, and shows the\n                                                        symbol in the symbols pane": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Enter</kbd>\n                                                        (Mac) or <br/>\n<kbd>Control</kbd>\n                                                        +<kbd>Enter</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ]
+        },
+        "Comments": {
+            "Inserts Markdown formatting for bolding text": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>B</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>B</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for italicizing text": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>I</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>I</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for code or a command within a line": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>E</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>E</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for creating a link": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>K</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>K</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Creates a Markdown link when applied over highlighted text": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>V</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>V</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Toggles between theWriteandPreviewcomment tabs": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>P</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>P</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Pastes HTML link as plain text": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>Option</kbd>\n                                                        +<kbd>V</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>Alt</kbd>\n                                                        +<kbd>V</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for an ordered list": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>7</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>7</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Inserts Markdown formatting for an unordered list": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>8</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>8</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Submits a comment": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Enter</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Enter</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Opens saved replies menu and then autofills comment field with a\n                                                        saved reply. For more information, see \"About\n                                                            saved replies.\"": [
+                "\n<kbd>Ctrl</kbd>\n                                                        +<kbd>.</kbd>\n                                                        and then <kbd>Ctrl</kbd>\n                                                        +<kbd>[saved reply number]</kbd>\n"
+            ],
+            "Inserts Markdown formatting for a quote": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>.</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>.</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Insert a suggestion. For more information, see \"Reviewing\n                                                            proposed changes in a pull request.\"": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>G</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>G</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Quote the selected text in your reply. For more information, see\n                                                        \"Basic\n                                                            writing and formatting syntax.\"": [
+                "\n<kbd>R</kbd>\n"
+            ]
+        },
+        "Issue and pull request lists": {
+            "Create an issue": [
+                "\n<kbd>C</kbd>\n"
+            ],
+            "Focus your cursor on the issues or pull requests search bar. For\n                                                        more information, see \"Filtering\n                                                            and searching issues and pull requests.\"": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>/</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>/</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Filter by author": [
+                "\n<kbd>U</kbd>\n"
+            ],
+            "Filter by or edit labels. For more information, see \"Filtering\n                                                            and searching issues and pull requests.\"": [
+                "\n<kbd>L</kbd>\n"
+            ],
+            "While filtering by labels, exclude labels. For more information,\n                                                        see \"Filtering\n                                                            and searching issues and pull requests.\"": [
+                "\n<kbd>Alt</kbd>\n                                                        and click\n                                                    "
+            ],
+            "Filter by or edit milestones. For more information, see \"Filtering\n                                                            issues and pull requests by milestone.\"": [
+                "\n<kbd>M</kbd>\n"
+            ],
+            "Filter by or edit assignee. For more information, see \"Filtering\n                                                            and searching issues and pull requests.\"": [
+                "\n<kbd>A</kbd>\n"
+            ],
+            "Open issue": [
+                "\n<kbd>O</kbd>\n                                                        or <kbd>Enter</kbd>\n"
+            ]
+        },
+        "Issues and pull requests": {
+            "Request a reviewer. For more information, see \"Requesting\n                                                            a pull request review.\"": [
+                "\n<kbd>Q</kbd>\n"
+            ],
+            "Set a milestone. For more information, see \"Associating\n                                                            milestones with issues and pull requests.\"": [
+                "\n<kbd>M</kbd>\n"
+            ],
+            "Apply a label. For more information, see \"Managing\n                                                            labels.\"": [
+                "\n<kbd>L</kbd>\n"
+            ],
+            "Set an assignee. For more information, see \"Assigning\n                                                            issues and pull requests to other GitHub users.\"": [
+                "\n<kbd>A</kbd>\n"
+            ],
+            "Link an issue or pull request from the same repository. For more\n                                                        information, see \"Linking\n                                                            a pull request to an issue.\"": [
+                "\n<kbd>X</kbd>\n"
+            ],
+            "Toggles between theWriteandPreviewtabs": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>P</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>P</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "When creating an issue from a task list, open the new issue form\n                                                        in the current tab by holdingAltand clicking thein the upper-right corner of the task. For more information, see\n                                                        \"About\n                                                            task lists.\"": [
+                "\n<kbd>Alt</kbd>\n                                                        and click\n                                                    "
+            ],
+            "When creating an issue from a task list, open the new issue form\n                                                        in a new tab by holdingShiftand clicking thein the upper-right corner of the task. For more information, see\n                                                        \"About\n                                                            task lists.\"": [
+                "\n<kbd>Shift</kbd>\n                                                        and click\n                                                    "
+            ],
+            "When creating an issue from a task list, open the new issue form\n                                                        in the new window by holdingCommandorCtrl+Shiftand clicking thein the upper-right corner of the task. For more information, see\n                                                        \"About\n                                                            task lists.\"": [
+                "\n<kbd>Command</kbd>\n                                                        and click (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        and click (Windows/Linux)\n                                                    "
+            ]
+        },
+        "\"Files changed\" tab in pull requests": {
+            "Open theCommitsdropdown menu to filter which commits are shown in the diffs": [
+                "\n<kbd>C</kbd>\n"
+            ],
+            "Move your cursor to the \"Filter changed files\" field": [
+                "\n<kbd>T</kbd>\n"
+            ],
+            "Submit a review comment": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>Enter</kbd>\n                                                        (Mac) or <kbd>Ctrl</kbd>\n                                                        +<kbd>Shift</kbd>\n                                                        +<kbd>Enter</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Toggle between collapsing and expanding all outdated or resolved\n                                                        review comments in a pull request (for example, by holding downAltand clickingShow outdatedorHide outdated)": [
+                "\n<kbd>Option</kbd>\n                                                        and click (Mac) or <kbd>Alt</kbd>\n                                                        and click (Windows/Linux)\n                                                    "
+            ],
+            "Comment on multiple lines of a pull request by clicking a line\n                                                        number, holdingShift, then clicking another line number. For more information, see\n                                                        \"Commenting\n                                                            on a pull request.\"": [
+                "\n                                                        Click, then <kbd>Shift</kbd>\n                                                        and click\n                                                    "
+            ]
+        },
+        "Projects": {
+            "Focus filter field": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>f</kbd>\n                                                        (Mac) or <kbd>Ctrl</kbd>\n                                                        +<kbd>f</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Move focus to the left": [
+                "\n<kbd>\u2190</kbd>\n"
+            ],
+            "Move focus to the right": [
+                "\n<kbd>\u2192</kbd>\n"
+            ],
+            "Move focus up": [
+                "\n<kbd>\u2191</kbd>\n"
+            ],
+            "Move focus down": [
+                "\n<kbd>\u2193</kbd>\n"
+            ]
+        },
+        "Projects (classic)": {
+            "Start moving the focused column": [
+                "\n<kbd>Enter</kbd>\n                                                        or <kbd>Space</kbd>\n"
+            ],
+            "Cancel the move in progress": [
+                "\n<kbd>Esc</kbd>\n"
+            ],
+            "Complete the move in progress": [
+                "\n<kbd>Enter</kbd>\n"
+            ],
+            "Move column to the left": [
+                "\n<kbd>\u2190</kbd>\n                                                        or <kbd>H</kbd>\n"
+            ],
+            "Move column to the leftmost position": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>\u2190</kbd>\n                                                        or <kbd>Command</kbd>\n                                                        +<kbd>H</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>\u2190</kbd>\n                                                        or <kbd>Ctrl</kbd>\n                                                        +<kbd>H</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Move column to the right": [
+                "\n<kbd>\u2192</kbd>\n                                                        or <kbd>L</kbd>\n"
+            ],
+            "Move column to the rightmost position": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>\u2192</kbd>\n                                                        or <kbd>Command</kbd>\n                                                        +<kbd>L</kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>\u2192</kbd>\n                                                        or <kbd>Ctrl</kbd>\n                                                        +<kbd>L</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ]
+        },
+        "GitHub Actions": {
+            "In the workflow editor, get suggestions for your workflow file.": [
+                "\n<kbd>Command</kbd>\n                                                        +<kbd>Space </kbd>\n                                                        (Mac) or <br/>\n<kbd>Ctrl</kbd>\n                                                        +<kbd>Space</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Go to the workflow file": [
+                "\n<kbd>G</kbd>\n<kbd>F</kbd>\n"
+            ],
+            "Toggle timestamps in logs": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>T</kbd>\n                                                        or <kbd>T</kbd>\n"
+            ],
+            "Toggle full-screen logs": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>F</kbd>\n                                                        or <kbd>F</kbd>\n"
+            ],
+            "Exit full-screen logs": [
+                "\n<kbd>Esc</kbd>\n"
+            ]
+        },
+        "Notifications": {
+            "Mark as done": [
+                "\n<kbd>E</kbd>\n"
+            ],
+            "Mark as unread": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>U</kbd>\n"
+            ],
+            "Mark as read": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>I</kbd>\n"
+            ],
+            "Unsubscribe": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>M</kbd>\n"
+            ]
+        },
+        "Network graph": {
+            "Scroll left": [
+                "\n<kbd>\u2190</kbd>\n                                                        or <kbd>H</kbd>\n"
+            ],
+            "Scroll right": [
+                "\n<kbd>\u2192</kbd>\n                                                        or <kbd>L</kbd>\n"
+            ],
+            "Scroll up": [
+                "\n<kbd>\u2191</kbd>\n                                                        or <kbd>K</kbd>\n"
+            ],
+            "Scroll down": [
+                "\n<kbd>\u2193</kbd>\n                                                        or <kbd>J</kbd>\n"
+            ],
+            "Scroll all the way left": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>\u2190</kbd>\n                                                        (Mac) or <br/>\n<kbd>Shift</kbd>\n                                                        +<kbd>H</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Scroll all the way right": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>\u2192</kbd>\n                                                        (Mac) or <br/>\n<kbd>Shift</kbd>\n                                                        +<kbd>L</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Scroll all the way up": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>\u2191</kbd>\n                                                        (Mac) or <br/>\n<kbd>Shift</kbd>\n                                                        +<kbd>K</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ],
+            "Scroll all the way down": [
+                "\n<kbd>Shift</kbd>\n                                                        +<kbd>\u2193</kbd>\n                                                        (Mac) or <br/>\n<kbd>Shift</kbd>\n                                                        +<kbd>J</kbd>\n                                                        (Windows/Linux)\n                                                    "
+            ]
+        }
+    }
+}
